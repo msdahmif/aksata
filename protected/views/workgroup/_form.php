@@ -36,7 +36,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'lembaga'); ?>
-		<?php echo $form->textField($model,'lembaga',array('size'=>11,'maxlength'=>11)); ?>
+		<?php
+		$options = array(
+				'tabindex' => '0',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'status', array('DE' => 'DE','DPP' => 'DPP','Kesenatoran' => 'Kesenatoran'), $options); ?>
 		<?php echo $form->error($model,'lembaga'); ?>
 	</div>
 
