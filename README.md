@@ -10,3 +10,12 @@
                                                                      
 An ANTIVVACANA Project
 Fill with something
+
+To Do:
+- perbaiki tampilan kode 'integer' jadi 'nama string' yang lebih baik
+- add upload foto
+- nampilin foto member
+- benerin breadcrumbs untuk membership
+- benerin beberapa istilah
+- bikin laporan akhir kepengurusan
+- batch sertifikat
