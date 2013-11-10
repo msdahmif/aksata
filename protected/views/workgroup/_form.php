@@ -41,7 +41,7 @@
 				'tabindex' => '0',
 		);
 		?>
-		<?php echo $form->dropDownList($model,'status', array('DE' => 'DE','DPP' => 'DPP','Kesenatoran' => 'Kesenatoran'), $options); ?>
+		<?php echo $form->dropDownList($model,'lembaga', array('DE' => 'DE','DPP' => 'DPP','Kesenatoran' => 'Kesenatoran'), $options); ?>
 		<?php echo $form->error($model,'lembaga'); ?>
 	</div>
 
