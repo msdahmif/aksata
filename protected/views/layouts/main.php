@@ -30,7 +30,12 @@
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				//array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Anggota', 'url'=>array('/member/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Workgroup', 'url'=>array('/workgroup/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Program Kerja', 'url'=>array('/program/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Aktivitas Eksternal', 'url'=>array('/externalActivity/index'), 'visible'=>!Yii::app()->user->isGuest),
+				array('label'=>'Circle', 'url'=>array('/circle/index'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
@@ -47,7 +52,7 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> by MSDA HMIF.<br/>
 		All Rights Reserved.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->

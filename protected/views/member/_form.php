@@ -1,6 +1,7 @@
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
+$form=$this->beginWidget('CActiveForm', array(
 	'id'=>'member-form',
 	'enableAjaxValidation'=>false,
 )); ?>
@@ -41,7 +42,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status',array('size'=>10,'maxlength'=>10)); ?>
+		<?php
+		$options = array(
+				'tabindex' => '0',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'status', array('Muda' => 'Muda','Biasa' => 'Biasa','Kehormatan' => 'Kehormatan'), $options); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
@@ -53,7 +59,16 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'dob'); ?>
-		<?php echo $form->textField($model,'dob'); ?>
+		<?php
+			$this->widget('CJuiDateTimePicker',array(
+			'model'=>$model,
+			'attribute'=>'dob',
+			'mode'=>'date',
+			'options'=>array(
+				"dateFormat"=>'yy-mm-dd'
+			)
+			));
+		 ?>
 		<?php echo $form->error($model,'dob'); ?>
 	</div>
 

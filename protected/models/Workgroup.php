@@ -82,7 +82,7 @@ class Workgroup extends CActiveRecord
 			'kepengurusan' => 'Kepengurusan',
 			'parent' => 'Parent',
 			'lembaga' => 'Lembaga',
-			'leader' => 'Leader',
+			'leader' => 'NIM Ketua',
 			'leaderTitle' => 'Leader Title',
 			'isPseudo' => 'Is Pseudo',
 		);

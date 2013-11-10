@@ -2,7 +2,7 @@
 
 <?php Yii::import('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker');
 $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'program-form',
+	'id'=>'external-activity-membership-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -11,9 +11,21 @@ $form=$this->beginWidget('CActiveForm', array(
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>45,'maxlength'=>45)); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<?php echo $form->labelEx($model,'external_activity'); ?>
+		<?php
+		$external_activity_list = CHtml::listData(ExternalActivity::model()->findAll(), 'id', 'name');
+		$options = array(
+				'tabindex' => '0',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'external_activity', $external_activity_list, $options); ?>
+		<?php echo $form->error($model,'external_activity'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'role'); ?>
+		<?php echo $form->textField($model,'role',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->error($model,'role'); ?>
 	</div>
 
 	<div class="row">
@@ -32,30 +44,24 @@ $form=$this->beginWidget('CActiveForm', array(
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'finish'); ?>
+		<?php echo $form->labelEx($model,'end'); ?>
 		<?php
 			$this->widget('CJuiDateTimePicker',array(
 			'model'=>$model,
-			'attribute'=>'finish',
+			'attribute'=>'end',
 			'mode'=>'date',
 			'options'=>array(
 				"dateFormat"=>'yy-mm-dd'
 			)
 			));
 		 ?>
-		<?php echo $form->error($model,'finish'); ?>
+		<?php echo $form->error($model,'end'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'workgroup'); ?>
-		<?php
-		$workgroup_list = CHtml::listData(Workgroup::model()->findAll(), 'id', 'name');
-		$options = array(
-				'tabindex' => '0',
-		);
-		?>
-		<?php echo $form->dropDownList($model,'workgroup', $workgroup_list, $options); ?>
-		<?php echo $form->error($model,'workgroup'); ?>
+		<?php echo $form->labelEx($model,'description'); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'description'); ?>
 	</div>
 
 	<div class="row buttons">

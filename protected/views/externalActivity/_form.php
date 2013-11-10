@@ -23,7 +23,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'externalITB'); ?>
-		<?php echo $form->textField($model,'externalITB'); ?>
+		<?php
+		$options = array(
+				'tabindex' => '0',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'externalITB', array('Internal ITB','Eksternal ITB'), $options); ?>
 		<?php echo $form->error($model,'externalITB'); ?>
 	</div>
 

@@ -84,15 +84,15 @@ class Member extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'NIM' => 'Nim',
-			'fullname' => 'Fullname',
+			'NIM' => 'NIM',
+			'fullname' => 'Nama Lengkap',
 			'nickname' => 'Nickname',
 			'address' => 'Address',
 			'phone' => 'Phone',
 			'status' => 'Status',
 			'picture' => 'Picture',
-			'dob' => 'Dob',
-			'batch' => 'Batch',
+			'dob' => 'Tanggal Lahir',
+			'batch' => 'Angkatan Pelantikan',
 		);
 	}
 

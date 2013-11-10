@@ -5,6 +5,9 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	array('label'=>'Aktivitas Eksternal', 'url'=>array('externalActivityMembership/index', 'member'=>$model->NIM)),
+	array('label'=>'Program Kerja', 'url'=>array('programMembership/index', 'member'=>$model->NIM)),
+	array('label'=>'Catatan Divisi', 'url'=>array('workgroupMembership/index', 'member'=>$model->NIM)),
 	array('label'=>'List Member', 'url'=>array('index')),
 	array('label'=>'Create Member', 'url'=>array('create')),
 	array('label'=>'Update Member', 'url'=>array('update', 'id'=>$model->NIM)),

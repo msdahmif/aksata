@@ -23,7 +23,14 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'parent'); ?>
-		<?php echo $form->textField($model,'parent'); ?>
+		<?php
+		$parent_list = CHtml::listData(Workgroup::model()->findAll(), 'id', 'name');
+		$options = array(
+				'tabindex' => '0',
+				'empty' => '(nope)',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'parent', $parent_list, $options); ?>
 		<?php echo $form->error($model,'parent'); ?>
 	</div>
 
@@ -47,7 +54,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'isPseudo'); ?>
-		<?php echo $form->textField($model,'isPseudo'); ?>
+		<?php
+		$options = array(
+				'tabindex' => '0',
+		);
+		?>
+		<?php echo $form->dropDownList($model,'isPseudo', array('Bukan','Ya'), $options); ?>
 		<?php echo $form->error($model,'isPseudo'); ?>
 	</div>
 

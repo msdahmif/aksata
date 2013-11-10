@@ -5,6 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	array('label'=>'Modify Member', 'url'=>array('circleMembership/index','id'=>$model->id)),
 	array('label'=>'List Circle', 'url'=>array('index')),
 	array('label'=>'Create Circle', 'url'=>array('create')),
 	array('label'=>'Update Circle', 'url'=>array('update', 'id'=>$model->id)),
