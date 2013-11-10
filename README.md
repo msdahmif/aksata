@@ -12,10 +12,15 @@ An ANTIVVACANA Project
 Fill with something
 
 To Do:
-- perbaiki tampilan kode 'integer' jadi 'nama string' yang lebih baik
+fungsional
 - add upload foto
-- nampilin foto member
-- benerin breadcrumbs untuk membership
-- benerin beberapa istilah
 - bikin laporan akhir kepengurusan
 - batch sertifikat
+
+non fungsional
+- perbaiki tampilan kode 'integer' jadi 'nama string' yang lebih baik
+- nampilin foto member
+- benerin breadcrumbs untuk membership
+- benerin tampilan beberapa istilah
+- kasih design yang lebih unyu
+- benerin tampilan detail item
